@@ -1,11 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react'
 import { Table } from 'antd';
 import "antd/dist/antd.css";
-import './App.css';
-import TableWithAPI from './components/TableWithAPI';
 
-function App() {
-
+export default function TableWithAPI() {
     const [loading, setLoading] = useState(false)
     const [dataSource, setDataSource] = useState([])
     const [page, setPage] = useState(1)
@@ -67,12 +64,21 @@ function App() {
         }
     ]
     return (
-        <div className="App">
-            <div className="App-header">
-                <TableWithAPI />
-            </div>
+        <div>
+            <Table
+                loading={loading}
+                columns={columns}
+                dataSource={dataSource}
+                pagination={{
+                    current: page,
+                    pageSize: pageSize,
+                    total: 500,
+                    onChange: (page, pageSize) => {
+                        setPage(page);
+                        setPageSize(pageSize)
+                        //Make the api call here with page and page size
+                    }
+                }}></Table>
         </div>
-    );
+    )
 }
-
-export default App;
