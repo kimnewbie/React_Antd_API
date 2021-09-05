@@ -15,6 +15,11 @@ export default function MomentCalendar({ value, onChange }) {
         <div className="calendar">
             <Header value={value} setValue={onChange} />
             <div className="body">
+                <div className="day-names">
+                    {
+                        ["Sun", "Mon", "Tue", "Wed", "Thus", "Fri", "Sat"].map(d => <div className="week">{d}</div>)
+                    }
+                </div>
                 {calendar.map((week) => (
                     <div>
                         {week.map((day) => (
