@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Table } from 'antd';
-import "antd/dist/antd.css";
+import "./TableWithAPI.css";
 
 export default function TableWithAPI() {
     const [loading, setLoading] = useState(false)
@@ -9,7 +9,6 @@ export default function TableWithAPI() {
     const [pageSize, setPageSize] = useState(10)
 
     useEffect(() => {
-
         setLoading(true)
         fetch("https://jsonplaceholder.typicode.com/todos")
             .then(
