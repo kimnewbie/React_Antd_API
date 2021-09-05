@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
-import moment from "moment";
 import "./MomentCalendar.css";
 import buildCalendar from "./build";
 import dayStyles, { beforeToday } from "./styles";
 import Header from "./header";
 
-export default function MomentCalendar() {
+export default function MomentCalendar({ value, onChange }) {
     const [calendar, setCalendar] = useState([]);
-    const [value, setValue] = useState(moment());
 
     useEffect(() => {
         setCalendar(buildCalendar(value));
@@ -15,12 +13,12 @@ export default function MomentCalendar() {
 
     return (
         <div className="calendar">
-            <Header value={value} setValue={setValue} />
+            <Header value={value} setValue={onChange} />
             <div className="body">
                 {calendar.map((week) => (
                     <div>
                         {week.map((day) => (
-                            <div className="day" onClick={() => !beforeToday(day) && setValue(day)}>
+                            <div className="day" onClick={() => !beforeToday(day) && onChange(day)}>
                                 <div className={dayStyles(day, value)}>
                                     {day.format("D").toString()}
                                 </div>
