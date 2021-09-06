@@ -1,13 +1,12 @@
 import React from 'react';
 // import './App.css';
 import 'antd/dist/antd.css';
+import PracticeCSS from './practiceCSS/PracticeCSS';
 
 function App() {
     return (
         <div className="App">
-            <div className="App-header">
-
-            </div>
+            <PracticeCSS />
         </div>
     );
 }

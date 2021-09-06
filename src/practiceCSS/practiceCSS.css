@@ -1,4 +1,56 @@
+/* div.container>div.item.item${$}*10*/
+
 .container {
   background: beige;
-  height: 100vh;
+  height: 100vh; /*부모와 상관없이 보이는 부분만*/
+  display: flex; /*아이템이 왼쪽에서 오른쪽으로 정렬됨*/
+  flex-direction: row;
+  /*왼쪽에서 오른쪽, row-reverse는 반대*/
+  /*flex-direction: column은 위에서 아래 column-reverse는 아래에서 위로 올라감*/
+  flex-wrap: nowrap; /*한줄에 꽉차게 :: wrap은 화면이 작아졌을 때 다른 줄로 변함 ::wrap-reverse는 아래에서 위로 반대로! */
+  /* flex-flow: column nowrap; 이건 두개 다 함께 사용하는 법 */
+  justify-content: flex-start; /*아이템을 어떻게 배치할지 왼쪽에서 오른쪽으로! :: space-around는 패딩 넣어주는 거 ::space-evenly, space-between*/
+  align-items: baseline; /*아예 화면 가운데로 ::baseline은 상자 크기가 달라도 텍스트 위치가 일렬로 맞춰지도록*/
+  align-content: space-between;
+}
+
+.item {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+}
+
+.item1 {
+  background: #ef9a9a;
+  flex-grow: 1; /*화면에 맞게 늘어남*/
+  flex-shrink: 0; /*높은 숫자일수록 컨테이너 화면에서 크게 작아진다*/
+  /* flex-basis: 30%; */
+  align-self: center; /*아이템 하나만 배치*/
+}
+.item2 {
+  background: #f48fb1;
+}
+.item3 {
+  background: #ce93d8;
+}
+.item4 {
+  background: #b39ddb;
+}
+.item5 {
+  background: #90caf9;
+}
+.item6 {
+  background: #a5d6a7;
+}
+.item7 {
+  background: #e6ee9c;
+}
+.item8 {
+  background: #fff494;
+}
+.item9 {
+  background: #ffc576;
+}
+.item10 {
+  background: #ffa189;
 }
