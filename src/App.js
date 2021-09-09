@@ -1,12 +1,12 @@
 import React from 'react';
 // import './App.css';
 import 'antd/dist/antd.css';
-import PracticeCSS from './practiceCSS/PracticeCSS';
+import { Scheduler } from './scheduler/Scheduler';
 
 function App() {
     return (
         <div className="App">
-            <PracticeCSS />
+            <Scheduler />
         </div>
     );
 }
